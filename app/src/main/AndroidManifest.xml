@@ -15,7 +15,6 @@
         <activity
             android:name=".create_card"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,7 +63,6 @@
         <activity
             android:name=".Onboard1"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -109,7 +109,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/zakruglenie"
-        android:entries="@array/Gender"
-        android:spinnerMode="dropdown"
-        android:textColor="#8E8D8D" />
-</RelativeLayout>
+        android:textColor="#8E8D8D"
+        />
+
+    <!--android:entries="@array/Gender"-->
+    </RelativeLayout>
