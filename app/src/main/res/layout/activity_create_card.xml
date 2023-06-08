@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".create_card">
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:text="Создание карты\nпациента" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_toRightOf="@id/textView17"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#1A6FEE"
+        android:text="Пропустить" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView17"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Без карты пациента вы не сможете заказывать анализы." />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView19"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="В картах пациентов будут храниться результаты\nанализов вас и ваших близких." />
+
+    <EditText
+        android:id="@+id/editText21"
+        android:layout_below="@id/textView20"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Имя"
+        android:background="@drawable/zakruglenie"
+        android:textColor="#8E8D8D"
+        android:paddingLeft="10dp"
+        android:textSize="16sp"
+        />
+
+    <EditText
+        android:id="@+id/editText22"
+        android:layout_below="@id/editText21"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Отчество"
+        android:background="@drawable/zakruglenie"
+        android:textColor="#8E8D8D"
+        android:paddingLeft="10dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editText23"
+        android:layout_below="@id/editText22"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Фамилия"
+        android:background="@drawable/zakruglenie"
+        android:textColor="#8E8D8D"
+        android:paddingLeft="10dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editText24"
+        android:layout_below="@id/editText23"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Дата рождения"
+        android:background="@drawable/zakruglenie"
+        android:textColor="#8E8D8D"
+        android:paddingLeft="10dp"
+        android:textSize="16sp"
+        android:inputType="date"
+        android:ems="10"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/editText24"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/zakruglenie"
+        android:entries="@array/Gender"
+        android:spinnerMode="dropdown"
+        android:textColor="#8E8D8D" />
+</RelativeLayout>

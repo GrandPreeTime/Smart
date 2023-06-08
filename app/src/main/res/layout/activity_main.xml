@@ -15,15 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="380dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_centerHorizontal="true"
-        android:text="Button"
-        android:background="@drawable/blue_button"/>
-
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
