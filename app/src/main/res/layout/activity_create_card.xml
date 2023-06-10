@@ -109,8 +109,22 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/zakruglenie"
-        android:textColor="#8E8D8D"
+        android:textColor="#8E8D8D"/>
+    <!--android:entries="@array/Gender"-->
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Создать"
+        android:textAllCaps="false"
+        android:background="@drawable/blue_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         />
 
-    <!--android:entries="@array/Gender"-->
     </RelativeLayout>
