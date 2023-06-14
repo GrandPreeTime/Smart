@@ -24,6 +24,7 @@ public class Onboard1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboard1);
+
         //переход по кнопке
         btn_propusk = findViewById(R.id.button);
         btn_propusk.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +35,7 @@ public class Onboard1 extends AppCompatActivity {
             }
         });
 
-        flipper = findViewById(R.id.viewflipper1);
+        /*flipper = findViewById(R.id.viewflipper1);
         prev_Button = findViewById(R.id.prev_button);
         next_Button = findViewById(R.id.next_button);
 
@@ -68,8 +69,6 @@ public class Onboard1 extends AppCompatActivity {
                     @Override
                     public void onClick(View v)
                     {
-                        // It is used to set the in and out
-                        // animation of View flipper.
                         flipper.setInAnimation(Onboard1.this,
                                 R.anim.left_swipe);
                         flipper.setOutAnimation(Onboard1.this,
@@ -80,6 +79,6 @@ public class Onboard1 extends AppCompatActivity {
                         Intent intent = new Intent(Onboard1.this, Onboard2.class);
                         startActivity(intent);
                     }
-                });
+                });*/
     }
 }

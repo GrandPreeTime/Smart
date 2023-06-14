@@ -1,7 +1,10 @@
 package com.example.smart;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -14,42 +17,62 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 public class create_card extends AppCompatActivity {
-
 
     private String[] gender = { "Мужской", "Женский" };
     Button nextUp;
     EditText name;
     EditText familiya;
     EditText otchestvo;
-    EditText date;
+    TextView date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_card);
 
+
         // убираем уведомления
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        /*supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_sign_up);*/
 
         // привязываем элементы
         nextUp = (Button) findViewById(R.id.button15);
         name = (EditText) findViewById(R.id.editText21);
         familiya = (EditText) findViewById(R.id.editText22);
         otchestvo = (EditText) findViewById(R.id.editText23);
-        date = (EditText) findViewById(R.id.editText24);
+        date = (TextView) findViewById(R.id.editText24);
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                int year = c.get(Calendar.YEAR);
+                int month = c.get(Calendar.MONTH);
+                int day = c.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        date.setText(dayOfMonth + "." + (month + 1) + "." + year);
+                    }
+                }, year, month, day);
+                datePickerDialog.show();
+            }
+        });
 
         // сравнение имени
         name.addTextChangedListener(new TextWatcher() {
@@ -146,6 +169,7 @@ public class create_card extends AppCompatActivity {
 
 
     }
+
     // изменение цвета кнопки
     private void checkNoEmptyItems(){
         if(name.getText().toString().length() != 0 & familiya.getText().toString().length() != 0 & otchestvo.getText().toString().length() != 0 & date.getText().toString().length() != 0){
@@ -154,5 +178,21 @@ public class create_card extends AppCompatActivity {
         else {
             nextUp.setEnabled(false);
         }
+    }
+
+    // настройка даты
+    public void dateClick(){
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                date.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+            }
+        }, year, month, day);
+        datePickerDialog.show();
     }
 }
