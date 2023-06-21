@@ -5,6 +5,7 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -33,22 +34,13 @@ public class create_card extends AppCompatActivity {
 
     private String[] gender = { "Мужской", "Женский" };
     Button nextUp;
-    EditText name;
-    EditText familiya;
-    EditText otchestvo;
-    TextView date;
+    EditText name, familiya, otchestvo;
+    TextView date, next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_card);
-
-
-        // убираем уведомления
-        /*supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_sign_up);*/
 
         // привязываем элементы
         nextUp = (Button) findViewById(R.id.button15);
