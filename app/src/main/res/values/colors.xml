@@ -7,4 +7,24 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#1A6FEE</color>
+    <color name="colorPrimaryDark">#FFFFFFFF</color>
+    <color name="colorAccent">#FF5252</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#939396</color>
+    <color name="colorBackground">#FFFFFFFF</color>
+    <color name="colorOnBoardingIndicatorInteractive">#72BCF7</color>
+
+
+    <color name="colorOnboardPrimary">#57A9FF</color>
+    <color name="colorTextHeading">#00B712</color>
+    <color name="colorTextAdditional">#939396</color>
+
+    <color name="buttonLogInInactive">#C9D4FB</color>
+    <color name="buttonLogInActive">#1A6FEE</color>
+
+    <color name="editTextLogInStroke">#EBEBEB</color>
+    <color name="editTextLogIn">#F5F5F9</color>
+    <color name="editTextTextColor">#00000080</color>
 </resources>

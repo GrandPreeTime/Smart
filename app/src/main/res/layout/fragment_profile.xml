@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="25dp"
+    android:paddingHorizontal="20dp"
+    tools:context=".FragmentProfile">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Карта пациента"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="24dp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/image_profile_background"
+        android:src="@drawable/image_profile_icon" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Без карты пациента вы не сможете заказать анализы."
+                android:textSize="14sp"
+                android:textColor="@color/colorTextSecondary"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="В картах пациентов будут храниться результаты анализов вас и ваших близких."
+                android:textSize="14sp"
+                android:textColor="@color/colorTextSecondary"/>
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:hint="Имя"
+                android:background="@drawable/zakruglenie"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTextPatronymic"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:hint="Имя"
+                android:background="@drawable/zakruglenie"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTextSecondName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:hint="Имя"
+                android:background="@drawable/zakruglenie"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTextBirthDay"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:hint="Имя"
+                android:background="@drawable/zakruglenie"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/zakruglenie"
+                android:entries="@array/Gender"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/buttonCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="Сохранить"
+                android:enabled="false"
+                android:layout_marginBottom="25dp"
+                android:paddingVertical="16dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/button_login" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

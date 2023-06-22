@@ -5,7 +5,9 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -33,9 +35,12 @@ import java.util.List;
 public class create_card extends AppCompatActivity {
 
     private String[] gender = { "Мужской", "Женский" };
+    private static final String MY_SETTINGS = "my_settings";
+    public static final String APP_PREFERENCES_CARD_FINISH = "cardFinish";
+
     Button nextUp;
     EditText name, familiya, otchestvo;
-    TextView date, next;
+    TextView date, skip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,8 @@ public class create_card extends AppCompatActivity {
         familiya = (EditText) findViewById(R.id.editText22);
         otchestvo = (EditText) findViewById(R.id.editText23);
         date = (TextView) findViewById(R.id.editText24);
+        skip = (TextView) findViewById(R.id.next);
+
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,26 +145,35 @@ public class create_card extends AppCompatActivity {
             }
         });
 
-
-        /*Spinner spinner = findViewById(R.id.spinner);
-        CustomAdapterSpinner.CustomAdapter adapter = new CustomAdapterSpinner.CustomAdapter(this,
-                android.R.layout.simple_spinner_item, gender);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        nextUp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int pos, long id) {
-                CustomAdapterSpinner.CustomAdapter.flag = true;
+            public void onClick(View v) {
+                SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
+                        Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean(APP_PREFERENCES_CARD_FINISH, true);
+                editor.apply();
+                Intent i = new Intent(create_card.this, MainAnalyz.class);
+                startActivity(i);
+                finishAffinity();
             }
         });
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinner.setSelection(adapter.getCount());*/
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
+                        Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean(APP_PREFERENCES_CARD_FINISH, true);
+                editor.apply();
+                Intent i = new Intent(create_card.this, MainAnalyz.class);
+                startActivity(i);
+                finishAffinity();
+            }
+        });
+
 
 
     }

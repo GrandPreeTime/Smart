@@ -1,122 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainAnalyz">
 
-    <SearchView
-        android:id="@+id/search"
-        android:layout_width="370dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/zakruglenie"
-        android:queryHint="Искать анализы"
-        app:iconifiedByDefault="true"
-        android:focusableInTouchMode="true"
-        >
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    </SearchView>
+    </FrameLayout>
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search"
-        android:layout_weight="1"
-        android:text="Акции и новости"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:textSize="16sp"/>
-
-    <HorizontalScrollView
-        android:id="@+id/bannerscroll"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/textView21">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="250dp"
-                android:layout_height="150dp"
-                android:scaleX="1"
-                android:scaleY="1"
-                android:layout_marginLeft="20dp"
-                app:srcCompat="@drawable/banner1" />
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="250dp"
-                android:layout_height="150dp"
-                android:scaleX="1"
-                android:scaleY="1"
-                android:layout_marginLeft="20dp"
-                app:srcCompat="@drawable/banner2" />
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Каталог анализов"
-        android:layout_below="@id/bannerscroll"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:textSize="16sp"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <RelativeLayout
-        android:layout_below="@id/textView22"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
-
-        <Button
-            android:id="@+id/button16"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Популярные"
-            android:textAllCaps="false"
-            android:textColor="#7E7E9A"
-            android:background="@drawable/zakruglenie"/>
-
-        <Button
-            android:id="@+id/button17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/button16"
-            android:layout_marginLeft="20dp"
-            android:text="Covid"
-            android:textAllCaps="false"
-            android:textColor="#7E7E9A"
-            android:background="@drawable/zakruglenie"/>
-
-        <Button
-            android:id="@+id/button18"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/button17"
-            android:layout_marginLeft="20dp"
-            android:text="Комплексные"
-            android:textAllCaps="false"
-            android:textColor="#7E7E9A"
-
-            android:background="@drawable/zakruglenie"/>
-    </RelativeLayout>
-</RelativeLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:itemIconTint="@color/navigation_menu"
+        app:itemTextColor="@color/navigation_menu"
+        app:menu="@menu/bottom_navigation"
+        style="@style/bottom_navigation"
+        app:itemBackground="@null"
+        app:labelVisibilityMode="labeled"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
